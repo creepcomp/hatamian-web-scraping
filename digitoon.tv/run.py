@@ -11,7 +11,7 @@ def get_category_products(id):
     return data["products"]
 
 def main():
-    with open("digitoon.csv", "w", encoding="utf-8") as csvfile:
+    with open("output.csv", "w", encoding="utf-8") as csvfile:
         csvwriter = csv.writer(csvfile)
         csvwriter.writerow(["شناسه", "نام", "نام انگلیسی", "دسته بندی", "لینک"])
         categories = get_categories()
