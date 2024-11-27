@@ -7,7 +7,7 @@ def scrape_page(url):
     items = []
     
     for item in soup.select('div.film_cat'):
-        title = item.get('data-title', '').strip()
+        title = item.select_one('div.film_cat_title').text.strip()
         score = item.get('data-imdb', '').strip()
         genres = item.select_one('.genres')
         link = item.get('data-link', '').strip()
